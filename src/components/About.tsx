@@ -3,25 +3,38 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Rocket, FolderOpen, Terminal } from "lucide-react";
 
 export default function About() {
   const portraitUrl = "https://lh3.googleusercontent.com/d/1mIl7ilvdZRk9WetjkXC_PV7cYazbMcjX";
 
+  const [repoCount, setRepoCount] = useState<number | string>("3");
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/ahmadnurz")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.public_repos !== undefined) {
+          setRepoCount(data.public_repos);
+        }
+      })
+      .catch((err) => console.error("Error fetching GitHub stats:", err));
+  }, []);
+
   const stats = [
     {
       id: "stat-projects",
       icon: <Rocket className="text-blue-600 dark:text-blue-400" size={24} />,
-      value: "3+",
+      value: `${repoCount}+`,
       label: "Active Projects",
       description: "Functional educational systems and prototypes",
     },
     {
       id: "stat-repos",
       icon: <FolderOpen className="text-blue-600 dark:text-blue-400" size={24} />,
-      value: "3",
+      value: `${repoCount}`,
       label: "GitHub Repos",
       description: "Self-driven educational repositories",
     },
