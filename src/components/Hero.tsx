@@ -70,7 +70,7 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600 dark:bg-blue-400"></span>
           </span>
           <span className="font-sans font-semibold text-xs tracking-wide uppercase">
-            I love vibe coding
+            Available for opportunities
           </span>
         </motion.div>
 
