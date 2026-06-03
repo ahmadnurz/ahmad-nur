@@ -57,6 +57,18 @@
       background: rgba(255, 255, 255, 0.2);
     }
   }
+
+  /* Hide scrollbars on touch devices (mobile/tablet) to prevent ugly default scrollbars on overflow elements */
+  @media (pointer: coarse) {
+    ::-webkit-scrollbar {
+      display: none;
+      width: 0;
+      height: 0;
+    }
+    * {
+      scrollbar-width: none;
+    }
+  }
 }
 
 /* Glassmorphism layouts */
