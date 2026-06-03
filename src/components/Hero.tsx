@@ -70,12 +70,12 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-600 dark:bg-blue-400"></span>
           </span>
           <span className="font-sans font-semibold text-xs tracking-wide uppercase">
-            Available for opportunities
+            I love vibe coding
           </span>
         </motion.div>
 
         {/* Hero Title */}
-        <motion.h1 
+        <motion.h1
           className="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-950 dark:text-white leading-[1.1] mb-5 tracking-tight"
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
